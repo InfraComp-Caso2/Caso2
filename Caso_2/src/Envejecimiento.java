@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Envejecimiento
 {
 
@@ -10,8 +12,7 @@ public class Envejecimiento
 		cantidadPaginas = pCantidadPaginas;
 		usos = new ArrayList<Integer>();
 		contadores = new String[pCantidadPaginas];
-		llenarTabla();
-		
+		llenarTabla();		
 	}
 
 	public void llenarTabla()
@@ -49,13 +50,14 @@ public class Envejecimiento
 				}
 			}				
 		}
+		usos = new ArrayList<Integer>();
 	}
-	
+
 	public int envejecer()
 	{
 		int lower = 128;
 		int indice = 0;
-	
+
 		for(int i = 0; i < cantidadPaginas; i++)
 		{
 			int comparacion = Integer.parseInt(contadores[i], 2);
@@ -69,10 +71,10 @@ public class Envejecimiento
 		agregarUsos(indice);
 		return indice;
 	}
-	
+
 	public static String borrarUltimoChar(String str)
 	{
-        return str.substring(0, str.length() - 1);
-    }
+		return str.substring(0, str.length() - 1);
+	}
 
 }
