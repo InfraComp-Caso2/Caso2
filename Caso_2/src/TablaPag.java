@@ -21,7 +21,7 @@ public class TablaPag {
 
     }
 
-    public boolean paginaEnTabla(int numPagina) {
+    public synchronized boolean paginaEnTabla(int numPagina) {
         boolean respuesta = paginasCargadas.contains(numPagina);
 
         if (respuesta) {
@@ -35,7 +35,7 @@ public class TablaPag {
         }   
     }
 
-    public void correrUn0(){
+    public synchronized void correrUn0(){
 
         for (int i = 0; i < cantidad; i++) {
             int elemento = cantidadAccesos.get(i);
@@ -45,7 +45,7 @@ public class TablaPag {
 
     }
 
-    public void agregarPagina(int numPagina) {
+    public synchronized void agregarPagina(int numPagina) {
 
         boolean respuesta = paginasCargadas.contains(-1);
 

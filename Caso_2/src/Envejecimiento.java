@@ -13,10 +13,12 @@ public class Envejecimiento extends Thread
 	{
 		activo = false;
 	}
-	public void despertar()
+	
+	public synchronized void despertar()
 	{
 		notify();
 	}
+	
 	public synchronized void  run()
 	{
 		while(activo)
